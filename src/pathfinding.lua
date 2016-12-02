@@ -47,6 +47,7 @@ function find_shortest_path_direction(sx, sy, tx, ty, map, width, height)
 
         end
     end
+    return 0
     
 end
 
