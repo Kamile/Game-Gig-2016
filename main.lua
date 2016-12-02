@@ -8,8 +8,8 @@ is_over = false
 
 level1 = {{0,0,0,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,0,0,0,0,0,0,0,0,0},
-          {0,0,1,1,1,1,0,0,1,1,0,0,0},
-          {0,0,1,0,1,1,1,1,0,0,0,0,0},
+          {0,0,2,1,1,1,0,0,1,1,0,0,0},
+          {0,0,1,0,1,1,1,1,1,0,0,0,0},
           {0,0,1,0,1,0,1,0,0,1,0,0,0},
           {0,0,1,0,1,0,1,1,1,1,1,0,0},
           {0,0,1,1,0,1,1,0,0,1,1,0,0},
@@ -69,6 +69,7 @@ function check_game()
 end
 
 function love.keypressed(key)
+    check_game()
 	success = false
 	if key == 'up' then
 		if (player.y > 1) then
@@ -108,8 +109,7 @@ function love.keypressed(key)
 end
 
 function love.draw()
-	love.graphics.printf("Score " .. score .. " --- Food left: " .. food .. 
-		" --- Enemy distance: " .. enemy_distance, 0, 0, platform.width, "center")
+	love.graphics.printf("Score " .. score .. " --- Food left: " .. food, 0, 0, platform.width, "center")
 	love.graphics.printf(key, 0, 0, platform.width, "center")
     
 	for i=-2,2 do
